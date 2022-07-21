@@ -1,6 +1,7 @@
 import './App.css';
 import '@fontsource/inter'
 import './styles.css'
+import Text from './components/Text'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
           Growers Code Challenge
         </h1>
       </header>
+      <Text />
     </div>
   )
 }
