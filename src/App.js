@@ -4,6 +4,7 @@ import '@fontsource/inter'
 import './styles.css'
 
 function App() {
+  const [searchString, setSearchString] = useState('');
   const [stringValue, setStringValue] = useState('');
 
   const searchInput = (e) => {
@@ -11,9 +12,15 @@ function App() {
     setStringValue(lowerCase)
   }
 
+  const replaceValue = (e) => {
+    const lowerCase = e.target.vaslue.toLowerCase()
+    setStringValue(lowerCase)
+  } 
+
   const handleClick = (e) => {
     e.preventDefault();
   }
+
   return (
     <div className="App">
       <header>
@@ -21,21 +28,24 @@ function App() {
           Growers Code Challenge
         </h1>
       </header>
-      <div className="paragraph">
-        <p>
+      <div>
+        <p className="paragraph">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Iaculis urna id volutpat lacus laoreet non curabitur gravida arcu. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus. Urna porttitor rhoncus dolor purus non. Sagittis purus sit amet volutpat consequat mauris. Eget nullam non nisi est sit amet facilisis. Elementum pulvinar etiam non quam lacus suspendisse. Posuere urna nec tincidunt praesent. Maecenas pharetra convallis posuere morbi leo. Orci eu lobortis elementum nibh. Aliquet nec ullamcorper sit amet risus. Eget magna fermentum iaculis eu. Ut faucibus pulvinar elementum integer enim.
         </p>
       </div>
       <form>
         <div>
-          <label>Search</label>
-          <input placeholder="Search strings..." />
+          <label>Replace </label>
+          <input className="searchString" />
+          {' '}with{' '}
+          <label>this string: </label>
+          <input className="stringValue" />
         </div>
-        <div>
-          <label>Replace</label>
-          <input placeholder="Replace strings..." />
-        </div>
-        <button onClick={handleClick}>Replace Strings</button>
+        <button 
+          onClick={handleClick}
+          className="replaceButton">
+            Replace Strings
+        </button>
       </form>
       <div className="stringList">
         <p>{stringValue}</p>
