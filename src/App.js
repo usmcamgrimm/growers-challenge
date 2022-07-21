@@ -2,6 +2,7 @@ import './App.css';
 import '@fontsource/inter'
 import './styles.css'
 import Text from './components/Text'
+import Replace from './components/Replace'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         </h1>
       </header>
       <Text />
+      <Replace />
     </div>
   )
 }
